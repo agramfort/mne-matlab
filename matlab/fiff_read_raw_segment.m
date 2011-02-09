@@ -48,6 +48,8 @@ function [data,times] = fiff_read_raw_segment(raw,from,to,sel)
 
 me='MNE:fiff_read_raw_segment';
 
+raw.fid = fopen(raw.info.filename,'rb','ieee-be'); % reopening the file
+
 if nargin == 3
     sel = [];
 elseif nargin == 2

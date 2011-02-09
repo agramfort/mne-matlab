@@ -205,7 +205,8 @@ fprintf(1,'\tRange : %d ... %d  =  %9.3f ... %9.3f secs\n',...
     double(data.first_samp)/data.info.sfreq,...
     double(data.last_samp)/data.info.sfreq);
 fprintf(1,'Ready.\n');
-return;
+
+fclose(data.fid);
 
     function [tag] = find_tag(node,findkind)
 
